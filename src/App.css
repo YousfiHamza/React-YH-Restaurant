@@ -1,9 +1,13 @@
 :root {
-  --mainBlue: #2a2a72;
-  --lightBlue: #009ffd;
   --mainWhite: #f3f3f3;
   --mainDark: #232528;
   --mainYellow: #ffa400;
+  --mainBlue: #2a2a72;
+  --lightBlue: #009ffd;
+  --mainRed: #be1919;
+  --lightRed: #f8030333;
+  --lightGreen: #3bf54a;
+  --mainGreen: #188b0d;
 }
 
 body {
@@ -12,10 +16,19 @@ body {
   color: var(--mainDark) !important;
 }
 
+.navbar {
+  background-image: url("./navBarBg.png") !important;
+  background-color: var(--mainDark);
+}
+
 .text-title {
-  font-family: "Lobster", cursive !important;
+  font-family: "Fredericka the Great", cursive !important;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
+}
+
+.text-red {
+  color: var(--mainRed);
 }
 
 .text-blue {

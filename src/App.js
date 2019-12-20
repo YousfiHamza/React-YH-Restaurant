@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
+// Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
+// Switching Routes ( Links clicking )
 import { Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/NavBar";
