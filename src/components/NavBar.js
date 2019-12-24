@@ -14,13 +14,13 @@ export default class NavBar extends Component {
         <Link to="/">
           <img src={logo} alt="Restaurant Logo" className="navbar-brand" />
         </Link>
-        <ul className="navbar-nav">
-          <li className="nav-item ml-5 text-center">
+        <ul className="navbar-nav d-flex justify-content-between">
+          <li className="nav-item text-center">
             <Link to="/" className="nav-link">
               Toutes Les Chhiwates
             </Link>
           </li>
-          <li className="nav-item ml-5 text-center">
+          <li className="nav-item text-center">
             <Link to="/aboutUs" className="nav-link">
               YH Restaurant
             </Link>

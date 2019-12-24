@@ -96,3 +96,16 @@ export const storeProducts = [
     total: 0
   }
 ];
+
+export const detailProduct = {
+  id: 8,
+  title: "Tajine",
+  img: "img/tajine.png",
+  price: 22,
+  chef: "Chef Ala Rasso",
+  info:
+    "Le tajine est lui aussi emblématique de la cuisine marocaine. Ce plat en terre cuite (assez proche de notre cocotte) permet de réaliser près de 300 recettes différentes, généralement salées, mais parfois sucrées, dans lesquelles on retrouve de la viande et des légumes, agrémentés de fruits secs, d’épices et d’aromates.",
+  inCart: false,
+  count: 0,
+  total: 0
+};
