@@ -7,16 +7,41 @@ const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
   state = {
-    products: storeProducts,
-    detailProduct
+    products: [],
+    // products: storeProducts ( store the reference so evry changes we make will take place at the source, we dont want that ! we will use the method setProducts down after)
+    detailProduct //ES6 syntax
   };
 
-  handleDetail = () => {
-    console.log("Hello from Detail");
+  componentDidMount() {
+    this.setProducts();
+  }
+
+  setProducts = () => {
+    let tempProducts = [];
+    storeProducts.forEach(item => {
+      const singleItem = { ...item };
+      tempProducts = [...tempProducts, singleItem];
+    });
+    this.setState(() => {
+      return { products: tempProducts };
+    });
   };
 
-  addToCart = () => {
-    console.log("Hello from Add to Cart");
+  // This method preventsus from rewritting that code inside everyTime
+  getItem = id => {
+    const product = this.state.products.find(item => item.id === id);
+    return product;
+  };
+
+  handleDetail = id => {
+    const product = this.getItem(id);
+    this.setState({
+      detailProduct: product
+    });
+  };
+
+  addToCart = id => {
+    console.log("Item", id, "Hello from Add to Cart");
   };
 
   render() {

@@ -27,6 +27,12 @@ body {
   text-transform: uppercase;
 }
 
+.text-chef {
+  font-family: "Oswald", cursive !important;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
 .text-red {
   color: var(--mainRed);
 }
@@ -37,4 +43,8 @@ body {
 
 .text-bright {
   color: var(--lightBlue);
+}
+
+.text-green {
+  color: var(--mainGreen);
 }

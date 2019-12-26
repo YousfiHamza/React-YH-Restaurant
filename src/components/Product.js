@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../Context";
+//we wont always have the data from our file so we need to make sure that we receive the data in the proper form
+import PropTypes from "prop-types";
 
 export default class Product extends Component {
   render() {
@@ -9,35 +11,40 @@ export default class Product extends Component {
     return (
       <ProducterWraper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
-          <div
-            className="img-container p-5"
-            onClick={() => {
-              console.log("you clicked on the img container");
-            }}
-          >
-            <Link to="/details">
-              <img
-                src={img}
-                alt={title}
-                className="card-img-top rounded-circle border border-danger"
-              />
-            </Link>
-            <button
-              className="cart-btn"
-              disabled={inCart}
-              onClick={() => {
-                console.log("ADDED TO THE CART");
-              }}
-            >
-              {inCart ? (
-                <p className="text-capitalize mb-0" disabled>
-                  in Cart
-                </p>
-              ) : (
-                <i className="fas fa-cart-plus" />
-              )}
-            </button>
-          </div>
+          <ProductConsumer>
+            {value => (
+              <div
+                className="img-container p-5"
+                onClick={() => {
+                  console.log("you clicked on the img container");
+                }}
+              >
+                <Link to="/details">
+                  <img
+                    src={img}
+                    alt={title}
+                    className="card-img-top rounded-circle border border-danger"
+                    onClick={() => value.handleDetail(id)}
+                  />
+                </Link>
+                <button
+                  className="cart-btn"
+                  disabled={inCart}
+                  onClick={() => {
+                    value.addToCart(id);
+                  }}
+                >
+                  {inCart ? (
+                    <p className="text-capitalize mb-0" disabled>
+                      En Panier
+                    </p>
+                  ) : (
+                    <i className="fas fa-cart-plus" />
+                  )}
+                </button>
+              </div>
+            )}
+          </ProductConsumer>
           <div className="card-footer d-flex justify-content-between">
             <p className="align-self-center mb-0">{title}</p>
             <h5>
@@ -51,20 +58,33 @@ export default class Product extends Component {
   }
 }
 
+Product.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    inCart: PropTypes.bool
+  }).isRequired
+};
+
 const ProducterWraper = styled.div`
   .card {
-    transition: all 1s linear;
+    transition: all 0.5s linear;
     border-radius: 2rem;
+    overflow: hidden;
   }
   .card-footer {
     background: transparent;
     border-top: transparent;
     transition: all 0.5s linear;
+    font-family: "Oswald", cursive;
+    text-transform: uppercase;
   }
   &:hover {
     .card {
       border: 0.04rem solid rgba(0, 0, 0, 0.2);
-      box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 5px 15px 0px rgba(0, 0, 0, 1);
     }
     .card-footer {
       background: rgba(200, 200, 200);
@@ -78,7 +98,7 @@ const ProducterWraper = styled.div`
         transform: translate(0, 0);
       }
       .card-img-top {
-        transform: scale(1.3);
+        transform: scale(1.2);
       }
     }
   }
