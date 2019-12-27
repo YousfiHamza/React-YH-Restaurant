@@ -7,14 +7,15 @@ export default class Default extends Component {
     return (
       <div className="container mt-5">
         <div className="row">
-          <div className="col-10 mx-auto text-center text-title">
+          <div className="col-10 mx-auto text-center">
             <Title title=" Erreur #404 " />
             <img
               src={camels}
               alt="Camels Traveling"
               style={{ width: "70vw" }}
             />
-            <Title title=" Page Introuvable !" />
+            <Title title={this.props.location.pathname} />
+            <Title title=" Est une Page Introuvable !" />
           </div>
         </div>
       </div>
