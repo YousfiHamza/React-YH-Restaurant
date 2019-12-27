@@ -9,7 +9,10 @@ export default class Product extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
-      <ProducterWraper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+      <ProducterWraper
+        in={inCart}
+        className="col-9 mx-auto col-md-6 col-lg-3 my-3 align-self-center"
+      >
         <div className="card">
           <ProductConsumer>
             {value => (
@@ -32,6 +35,7 @@ export default class Product extends Component {
                   disabled={inCart}
                   onClick={() => {
                     value.addToCart(id);
+                    value.openModal(id);
                   }}
                 >
                   {inCart ? (
@@ -118,9 +122,8 @@ const ProducterWraper = styled.div`
     border-radius: 0.5rem 0 0 0;
     transition: all 0.3s linear;
     transform: translate(100%, 100%);
-    &:hover {
-      background: var(--mainRed);
-      color: var(--lightGreen);
-    }
-  }
+    cursor: not-allowed;
+    ${props =>
+      !props.in &&
+      "&:hover {background: var(--mainRed); color: var(--lightGreen); cursor: pointer;};"}
 `;

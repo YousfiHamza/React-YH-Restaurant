@@ -32,6 +32,7 @@ export default class Details extends Component {
                       className="img-fluid  rounded-pill"
                       alt="ProductImage"
                     />
+                    {/* img-fluid to make sur the img fits */}
                   </div>
                   <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                     <h4 className="text-chef text-uppercase mt-3 mb-2">
@@ -52,7 +53,7 @@ export default class Details extends Component {
                     {/* Buttons */}
                     <div className="text-muted lead">
                       <Link to="/">
-                        <ButtonContainer store>
+                        <ButtonContainer detail>
                           Retour Aux Chhiwates
                         </ButtonContainer>
                       </Link>
@@ -60,6 +61,7 @@ export default class Details extends Component {
                         disabled={inCart}
                         onClick={() => {
                           value.addToCart(id);
+                          value.openModal(id);
                         }}
                       >
                         {inCart ? "En Panier" : "Ajouter Au Panier"}

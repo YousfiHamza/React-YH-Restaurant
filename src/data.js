@@ -75,7 +75,7 @@ export const storeProducts = [
     id: 7,
     title: "Seffa",
     img: "img/seffa.png",
-    price: 22,
+    price: 13,
     chef: "Chef Ramsey",
     info:
       "La seffa est un plat que l’on partage, assez simple à préparer mais qui demande beaucoup de patience, puisqu’il va cuire pendant de longues heures. S’il n’est pas aussi connu que le couscous, il est tout aussi savoureux mais aussi équilibré puisque riche en fruits secs et en épices. On le prépare avec des vermicelles (baptisés cheveux d’ange au Maroc), qui vont être servis avec de la viande de poulet, et agrémenté pour les grandes occasions de sucre glaces et d’amandes concassées. Un délice !",

@@ -10,13 +10,11 @@ export const CartButtonContainer = styled.button`
   border-radius: 0.5rem;
   padding: 0.2rem 0.5rem;
   margin: 0.2rem 0.5rem 0.2rem 0;
-  cursor: pointer;
+  cursor: not-allowed;
   transition: all 0.3s ease-in-out;
-  &:hover {
-    background: var(--mainRed);
-    color: var(--lightGreen);
-    border: solid var(--mainGreen);
-  }
+  ${props =>
+    !props.disabled &&
+    "&:hover {background: var(--mainRed); color: var(--lightGreen); cursor: pointer;};"}
 `;
 
 export const ButtonContainer = styled.button`
@@ -25,8 +23,8 @@ export const ButtonContainer = styled.button`
   background: transparent;
   border: solid;
   border-color: ${props =>
-    props.store ? "var(--mainYellow)" : "var(--lightBlue)"};
-  color: ${props => (props.store ? "var(--mainYellow)" : "var(--lightBlue)")};
+    props.detail ? "var(--mainBlue)" : "var(--lightBlue)"};
+  color: ${props => (props.detail ? "var(--lightBlue)" : "var(--lightBlue)")};
   border-radius: 0.5rem;
   padding: 0.2rem 0.5rem;
   margin: 0.2rem 0.5rem 0.2rem 0;
@@ -34,7 +32,7 @@ export const ButtonContainer = styled.button`
   transition: all 0.3s ease-in-out;
   &:hover {
     background: ${props =>
-      props.store ? "var(--mainYellow)" : "var(--lightBlue)"};
+      props.detail ? "var(--mainYellow)" : "var(--lightBlue)"};
     color: var(--mainBlue);
   }
 `;

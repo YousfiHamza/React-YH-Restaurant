@@ -48,3 +48,63 @@ body {
 .text-green {
   color: var(--mainGreen);
 }
+
+.btn-black {
+  border: 0.1rem solid var(--mainDark) !important;
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.8rem !important;
+  color: var(--mainDark);
+}
+
+.btn-green {
+  border: 0.1rem solid var(--mainGreen) !important;
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.8rem !important;
+  color: var(--mainGreen) !important;
+}
+
+.btn-green:hover {
+  background: var(--mainGreen) !important;
+  color: var(--mainWhite) !important;
+}
+
+.btn-red {
+  border: 0.1rem solid var(--mainRed) !important;
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.8rem !important;
+  color: var(--mainRed) !important;
+}
+
+.btn-red:hover {
+  background: var(--mainRed) !important;
+  color: var(--mainWhite) !important;
+}
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--mainRed);
+}
+
+@media screen and (max-width: 991px) {
+  .c-card {
+    background-color: white;
+    width: 70vw;
+    border: Solid;
+    border-radius: 2rem;
+    margin: auto auto !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .c-card {
+    background-color: white;
+    border: Solid;
+    border-radius: 2rem;
+    margin: auto auto !important;
+    align-items: center;
+  }
+}
