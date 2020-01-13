@@ -21,27 +21,30 @@ class ProductProvider extends Component {
   };
 
   componentDidMount() {
-    this.setProducts();
+    if (!localStorage.getItem("products")) {
+      this.setProducts();
+    } else {
+      console.log("using data from local storage");
+    }
+  }
+
+  componentWillMount() {
     if (
+      localStorage.getItem("products") &&
       localStorage.getItem("cart") &&
       localStorage.getItem("cartSubTotal") &&
       localStorage.getItem("cartTax") &&
       localStorage.getItem("cartTotal")
     ) {
-      console.log("USING DATA FROM LOCAL STORAGE");
-    } else {
-      localStorage.setItem("cart", JSON.stringify(this.state.cart));
-      localStorage.setItem("cartSubTotal", 0);
-      localStorage.setItem("cartTax", 0);
-      localStorage.setItem("cartTotal", 0);
-    }
-  }
-
-  componentWillMount() {
-    localStorage.getItem("cart") &&
       this.setState({
-        cart: JSON.parse(localStorage.getItem("cart"))
+        cart: JSON.parse(localStorage.getItem("cart")),
+        products: JSON.parse(localStorage.getItem("products")),
+        detailProduct: JSON.parse(localStorage.getItem("detailProduct")),
+        cartSubTotal: JSON.parse(localStorage.getItem("cartSubTotal")),
+        cartTax: JSON.parse(localStorage.getItem("cartTax")),
+        cartTotal: JSON.parse(localStorage.getItem("cartTotal"))
       });
+    }
   }
 
   setProducts = () => {
@@ -215,7 +218,12 @@ class ProductProvider extends Component {
   };
 
   componentWillUpdate(nextProps, nextState) {
-    localStorage.setItem("cart", nextState.cart);
+    localStorage.setItem(
+      "detailProduct",
+      JSON.stringify(nextState.detailProduct)
+    );
+    localStorage.setItem("products", JSON.stringify(nextState.products));
+    localStorage.setItem("cart", JSON.stringify(nextState.cart));
     localStorage.setItem("cartSubTotal", nextState.cartSubTotal);
     localStorage.setItem("cartTax", nextState.cartTax);
     localStorage.setItem("cartTotal", nextState.cartTotal);
