@@ -14,7 +14,7 @@ export default class ProductList extends Component {
       <React.Fragment>
         <div className="py-5 d-flex justify-content-around">
           <div className="container ">
-            <Title title="BIENVENUE AU MAROC" />
+            <Title title="BIENVENUE AU MAROC 2.0" />
             <div className="row">
               <ProductConsumer>
                 {value => {

@@ -22,6 +22,26 @@ class ProductProvider extends Component {
 
   componentDidMount() {
     this.setProducts();
+    if (
+      localStorage.getItem("cart") &&
+      localStorage.getItem("cartSubTotal") &&
+      localStorage.getItem("cartTax") &&
+      localStorage.getItem("cartTotal")
+    ) {
+      console.log("USING DATA FROM LOCAL STORAGE");
+    } else {
+      localStorage.setItem("cart", JSON.stringify(this.state.cart));
+      localStorage.setItem("cartSubTotal", 0);
+      localStorage.setItem("cartTax", 0);
+      localStorage.setItem("cartTotal", 0);
+    }
+  }
+
+  componentWillMount() {
+    localStorage.getItem("cart") &&
+      this.setState({
+        cart: JSON.parse(localStorage.getItem("cart"))
+      });
   }
 
   setProducts = () => {
@@ -193,6 +213,13 @@ class ProductProvider extends Component {
       };
     });
   };
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem("cart", nextState.cart);
+    localStorage.setItem("cartSubTotal", nextState.cartSubTotal);
+    localStorage.setItem("cartTax", nextState.cartTax);
+    localStorage.setItem("cartTotal", nextState.cartTotal);
+  }
 
   render() {
     return (
