@@ -136,30 +136,19 @@ class ProductProvider extends Component {
 
     product.count--;
     if (product.count === 0) {
-      this.setState(
-        () => {
-          return {
-            cart: [...tempCart]
-          };
-        },
-        () => {
-          this.addTotals();
-          this.removeItem(product.id);
-        }
-      );
-    } else {
-      product.total = product.price * product.count;
-      this.setState(
-        () => {
-          return {
-            cart: [...tempCart]
-          };
-        },
-        () => {
-          this.addTotals();
-        }
-      );
+      product.count = 1;
     }
+    product.total = product.price * product.count;
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart]
+        };
+      },
+      () => {
+        this.addTotals();
+      }
+    );
   };
 
   removeItem = id => {
