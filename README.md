@@ -1,6 +1,6 @@
 ## Welcome To YH Restaurant :
 
-This is a Restaurant App created mainly with React.JS (context API) / Bootstrap, that you can check now on [yh-restaurant.app]!(https://yh-restaurant.netlify.app/).
+This is a Restaurant App created mainly with React.JS (context API) / Bootstrap, that you can check now on [http://localhost:3000](https://yh-restaurant.netlify.app) .
 
 ## Features :
 
@@ -8,7 +8,7 @@ These are some of the features :
 
 * You can add the designed meal to the cart directly or you can click it to check more details about it in the detail page.
 
-* if a meal was already added to the cart you can't add it ( it will be designed as "ALREADY IN CART").
+* if a meal was already added to the cart you can't add it again ( it will be designed as "ALREADY IN CART", and fron your cart you can decide the final quantity from that meal).
 
 * on the cart page you can adjust the quantities of each meal or you can take it away from you cart totally.
 
