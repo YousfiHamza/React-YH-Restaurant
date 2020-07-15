@@ -1,10 +1,10 @@
 ## Welcome To YH Restaurant :
 
-<<<<<<< HEAD
-This is a Restaurant App created mainly with React.JS (context API) / Bootstrap, that you can check now on [YH-Restaurant.app](https://yh-restaurant.netlify.app)  <=
-=======
 This is a Restaurant App created mainly with React.JS (context API) / Bootstrap, that you can check now on [YH-Restaurant.app](https://yh-restaurant.netlify.app) <=
->>>>>>> 321ff0b79a691a4cc3a1e7be6e3a3ffebc10db66
+
+## Overview :
+
+![](public/yh_restaurant.png)
 
 ## Features :
 
