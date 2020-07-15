@@ -5,6 +5,7 @@ This is a Restaurant App created mainly with React.JS (context API) / Bootstrap,
 ## Overview :
 
 ![](public/yh_restaurant.png)
+![](public/yh_restaurant2.png)
 
 ## Features :
 
