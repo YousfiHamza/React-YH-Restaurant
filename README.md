@@ -1,4 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Welcome To YH Restaurant :
+
+This is a Restaurant App created mainly with React.JS (context API) / Bootstrap, that you can check now on [yh-restaurant.app] !(https://yh-restaurant.netlify.app/).
+
+## Features :
+
+These are some of the features :
+
+* You can add the designed meal to the cart directly or you can click it to check more details about it in the detail page.
+
+* if a meal was already added to the cart you can't add it ( it will be designed as "ALREADY IN CART").
+
+* on the cart page you can adjust the quantities of each meal or you can take it away from you cart totally.
+
+* you can empty you cart in one click.
+
+* the total that needs to be payed is tracked instanly.
 
 ## Available Scripts
 
